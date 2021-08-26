@@ -132,7 +132,7 @@ float default_tempo = float(animato); // default tempo - beats per minute
 float current_tempo = default_tempo;
 float timings[6];                     // holds timings for each defined note/rest time value
 #define trills_per_crotchet     8     // number of note changes in a trill per crotchet
-float trill_duration;
+float trill_duration;                 // set depending on the tempo selected
 
 //
 // Standard note/rest duration definitions, set in the set_tempo function
@@ -169,7 +169,8 @@ void set_tempo(float new_tempo) {
   quav      = crotchet_duration / 2; // quaver, 1/2 beat
   semiq     = crotchet_duration / 4; // semiquaver, 1/4 beat
 
-  // Initialise the number of note changes in a trill per crotchet.
+  // Set the note duration time for one note in a trill depending on the
+  // defined number of note changes in a trill per crotchet.
   trill_duration = crot / trills_per_crotchet;
 }
 
@@ -211,51 +212,9 @@ void setup() {
   set_tempo(default_tempo);
 }
 
-
 void loop() {
   // some music examples...
 
-  set_tempo(default_tempo);
-  // 3/4 time
-  // bar 1
-  trill(G3, GS3, quav);
-  play(G3, quav);
-  play(A3, crot);
-  play(G3, crot);
-  // bar 2
-  play(C4, crot);
-  play(B3, minim);
-  // bar 3
-  trill(G3, GS3, quav);
-  play(G3, quav);
-  play(A3, crot);
-  play(G3, crot);
-  // bar 4
-  play(D4, crot);
-  play(C4, minim);
-  // bar 5
-  trill(G3, GS3, quav);
-  play(G3, quav);
-  play(G4, crot);
-  play(E4, crot);
-  // bar 6
-  play(C4, crot);
-  play(B3, crot);
-  play(A3, crot);
-  // bar 7
-  trill(F4, FS4, quav);
-  play(F4, quav);
-  play(E4, crot);
-  play(C4, crot);
-  // bar 8
-  play(D4, crot);
-  play(C4, minim);
-  exit(0);
-
-
-  canon_in_D();
-  wait(3);
-  exit(0);
   middle_C();
   wait(3);
 
@@ -280,19 +239,10 @@ void loop() {
   ode_to_joy();
   wait(3);
 
+  canon_in_D();
+  wait(3);
   // and back to the beginning...
 }
-
-
-
-
-
-
-
-
-
-
-
 
 //
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -300,6 +250,7 @@ void loop() {
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 void middle_C() {
+  // 4/4 time
   // C major scale - up
   // bar 1
   play(C3, crot);
@@ -556,101 +507,102 @@ void door_bell_2() {// basic bing/bong door chime
 void ode_to_joy() {
   set_tempo(allegro);
   // 4/4 time
-  //bar 1 - B B C' D'
+  //bar 1 
   play(B3, crot);
   play(B3, crot);
   play(C4, crot);
   play(D4, crot);
-  //bar 2 - D' C' B A
+  //bar 2 
   play(D4, crot);
   play(C4, crot);
   play(B3, crot);
   play(A3, crot);
-  //bar 3 - G G A B
+  //bar 3 
   play(G3, crot);
   play(G3, crot);
   play(A3, crot);
   play(B3, crot);
-  //bar 4 - B. AQ AM
+  //bar 4 
   play(B3, crot + quav);
   play(A3, quav);
   play(A3, minim);
-  //bar 5 - B B C' D'
+  //bar 5 
   play(B3, crot);
   play(B3, crot);
   play(C4, crot);
   play(D4, crot);
-  //bar 6 - D' C' B A
+  //bar 6 
   play(D4, crot);
   play(C4, crot);
   play(B3, crot);
   play(A3, crot);
-  //bar 7 - G G A B
+  //bar 7 
   play(G3, crot);
   play(G3, crot);
   play(A3, crot);
   play(B3, crot);
-  //bar 8 - A. GQ GM
+  //bar 8 
   play(A3, crot + quav);
   play(G3, quav);
   play(G3, minim);
-  //bar 9 - A A B G
+  //bar 9 
   play(A3, crot);
   play(A3, crot);
   play(B3, crot);
   play(G3, crot);
-  //bar 10 - A BQ C'Q B G
+  //bar 10 
   play(A3, crot);
   play(B3, quav);
   play(C4, quav);
   play(B3, crot);
   play(G3, crot);
-  //bar 11 - A BQ C'Q B A
+  //bar 11 
   play(A3, crot);
   play(B3, quav);
   play(C4, quav);
   play(B3, crot);
   play(A3, crot);
-  //bar 12 - G A DM
+  //bar 12 
   play(G3, crot);
   play(A3, crot);
   play(D3, minim);
-  //bar 13 - B B C' D'
+  //bar 13 
   play(B3, crot);
   play(B3, crot);
   play(C4, crot);
   play(D4, crot);
-  //bar 14 - D' C' B A
+  //bar 14 
   play(D4, crot);
   play(C4, crot);
   play(B3, crot);
   play(A3, crot);
-  //bar 15 - G G A B
+  //bar 15 
   play(G3, crot);
   play(G3, crot);
   play(A3, crot);
   play(B3, crot);
-  //bar 16 - A. GQ GM
+  //bar 16 
   play(A3, crot + quav);
   play(G3, quav);
   play(G3, minim);
 }
 
 void canon_in_D() {
-  // bars 1-4 bass clef intro, melody starts at bar 5
-  set_tempo(moderato);
+  set_tempo(110);
+  // 4/4 time
+  // melody starts at bar 5
   // bar 5
-  play(FS3, minim);
-  play(E3, minim);
+  play(FS4, minim);
+  play(E4, minim);
   // bar 6
-  play(D3, minim);
-  play(CS3, minim);
+  play(D4, minim);
+  play(CS4, minim);
   // bar 7
-  play(B2, minim);
-  play(A2, minim);
+  play(B3, minim);
+  play(A3, minim);
   // bar 8
-  play(B2, minim);
-  play(CS3, minim);
+  play(B3, minim);
+  play(CS4, minim);
   // bar 9
   play(FS4, minim);
   play(E4, minim);
@@ -664,46 +616,63 @@ void canon_in_D() {
   play(B3, minim);
   play(CS4, minim);
   // bar 13
-  play(FS4, minim);
-  play(E4, minim);
-  // bar 14
-  play(D4, minim);
-  play(CS4, minim);
-  // bar 15
-  play(B3, minim);
-  play(A3, minim);
-  // bar 16
-  play(B3, minim);
-  play(CS4, minim);
-  // bar 17
-  rest(crot);
+  play(D3, crot);
   play(FS3, crot);
   play(A3, crot);
   play(G3, crot);
-  // bar 18
+  // bar 14
   play(FS3, crot);
   play(D3, crot);
   play(FS3, crot);
   play(E3, crot);
-  // bar 19
+  // bar 15
   play(D3, crot);
   play(B2, crot);
   play(D3, crot);
-  play(FS3, crot);
-  // bar 20
+  play(A3, crot);
+  // bar 16
   play(G3, crot);
   play(B3, crot);
-  play(CS4, minim);
+  play(A3, crot);
+  play(G3, crot);
+  // bar 17
+  play(FS3, crot);
+  play(D3, crot);
+  play(E3, crot);
+  play(CS4, crot);
+  // bar 18
+  play(D4, crot);
+  play(FS4, crot);
+  play(A4, crot);
+  play(A3, crot);
+  // bar 19
+  play(B3, crot);
+  play(G3, crot);
+  play(A3, crot);
+  play(FS3, crot);
+  // bar 20
+  play(E3, crot);
+  play(D4, crot);
+  play(D3, crot + quav);
+  play(CS4, quav);
   // bar 21
   play(D4, quav);
   play(CS4, quav);
   play(D4, quav);
+  play(D3, quav);
+
+  play(CS3, quav);
   play(A3, quav);
-  play(CS4, minim);
+  play(E3, quav);
+  play(FS3, quav);
   // bar 22
-  play(D4, crot);
-  play(FS4, crot);
-  play(A4, crot);
+  play(D3, quav);
+  play(D4, quav);
+  play(CS4, quav);
+  play(B3, quav);
+
+  play(CS4, quav);
+  play(FS4, quav);
   play(A4, quav);
   play(B4, quav);
   // bar 23
@@ -711,82 +680,285 @@ void canon_in_D() {
   play(FS4, quav);
   play(E4, quav);
   play(G4, quav);
+
   play(FS4, quav);
   play(E4, quav);
   play(D4, quav);
   play(CS4, quav);
   // bar 24
-  play(B3, crot);
-  play(D4, crot);
-  play(D4, crot);
-  play(CS4, crot);
-  // bars 25, 26, 27, 28
-  play(D4, crot);
-  play(FS4, crot);
-  play(A4, minim + crot); // tied notes
-  play(G4, crot);
-  play(FS4, minim + crot); // tied notes
-  play(E4, crot);
-  play(D4, minim + crot); // tied note
-  play(E4, crot);
-  play(E4, crot);
-  play(FS4, quav);
-  play(G4, quav);
-  // bar 29
-  play(FS4, crot);
-  play(FS4, crot + quav); // tied note
-  play(G4, quav);
-  play(FS4, quav);
-  play(G4, quav);
-  // bar 30
-  play(FS4, crot);
-  play(FS4, crot + minim); // tied note
-  // bar 31
-  play(FS4, crot);
-  play(FS4, crot + quav); // tied note
-  play(G4, quav);
-  play(FS4, quav);
-  play(G4, quav);
-  // bar 32
-  play(FS4, minim);
-  play(E4, minim);
-  // bar 33
-  play(FS4, crot);
-  play(FS4, crot);
-  play(FS4, quav);
-  play(G4, quav);
-  play(FS4, quav);
-  play(E4, quav);
-  // bar 34
-  play(D4, crot);
-  play(D4, crot);
-  play(D4, quav);
-  play(E4, quav);
-  play(D4, quav);
-  play(C4, quav);
-  // bar 35
-  play(B3, minim);
-  play(D4, crot);
-  play(D4, crot);
-  // bar 36
+  play(B3, quav);
+  play(A3, quav);
+  play(G3, quav);
+  play(FS3, quav);
+
+  play(E3, quav);
+  play(G3, quav);
+  play(FS3, quav);
+  play(E3, quav);
+  // bar 25
+  play(D3, quav);
+  play(E3, quav);
+  play(FS3, quav);
+  play(G3, quav);
+
+  play(A3, quav);
+  play(E3, quav);
+  play(A3, quav);
+  play(G3, quav);
+  // bar 26
+  play(FS3, quav);
+  play(B3, quav);
+  play(A3, quav);
+  play(G3, quav);
+
+  play(A3, quav);
+  play(G3, quav);
+  play(FS3, quav);
+  play(E3, quav);
+  // bar 27
+  play(D3, quav);
+  play(B2, quav);
+  play(B3, quav);
+  play(CS4, quav);
+
   play(D4, quav);
   play(CS4, quav);
   play(B3, quav);
-  play(D4, quav);
-  play(C4, minim);
+  play(A3, quav);
+  // bar 28
+  play(G3, quav);
+  play(FS3, quav);
+  play(E3, quav);
+  play(B3, quav);
+
+  play(A3, quav);
+  play(B3, quav);
+  play(A3, quav);
+  play(G3, quav);
+  // bar 29
+  play(FS3, crot);
+  play(FS4, crot);
+  play(E4, minim);
+  // bar 30
+  rest(crot);
+  play(D4, crot);
+  play(FS4, minim);
+  // bar 31
+  play(B4, minim);
+  play(A4, minim);
+  // bar 32
+  play(B4, minim);
+  play(CS5, minim);
+  // bar 33
+  play(D5, crot);
+  play(D4, crot);
+  play(CS4, minim);
+  // bar 34
+  rest(crot);
+  play(B4, crot);
+  play(D4, minim);
+  // bar 35
+  play(D4, dot_minim);
+  play(D4, crot);
+  // bar 36
+  play(D4, crot);
+  play(G4, crot);
+  play(E4, crot);
+  play(A4, crot);
   // bar 37
-  rest(crot);
-  play(A3, dot_minim);
-  //  bar 38
-  rest(crot);
-  play(FS3, dot_minim);
+  play(A4, quav);
+  play(FS4, semiq);
+  play(G4, semiq);
+
+  play(A4, quav);
+  play(FS4, semiq);
+  play(G4, semiq);
+
+  play(A4, semiq);
+  play(A3, semiq);
+  play(B3, semiq);
+  play(CS4, semiq);
+
+  play(D4, semiq);
+  play(E4, semiq);
+  play(FS4, semiq);
+  play(G4, semiq);
+  // bar 38
+  play(FS4, quav);
+  play(D4, semiq);
+  play(E4, semiq);
+
+  play(FS4, quav);
+  play(FS3, semiq);
+  play(G3, semiq);
+
+  play(A3, semiq);
+  play(B3, semiq);
+  play(A3, semiq);
+  play(G3, semiq);
+
+  play(A3, semiq);
+  play(FS3, semiq);
+  play(G3, semiq);
+  play(A3, semiq);
   // bar 39
-  rest(crot);
-  play(D3, dot_minim);
+  play(G3, quav);
+  play(B3, semiq);
+  play(A3, semiq);
+
+  play(G3, quav);
+  play(FS3, semiq);
+  play(E3, semiq);
+
+  play(FS3, semiq);
+  play(E3, semiq);
+  play(D3, semiq);
+  play(E3, semiq);
+
+  play(FS3, semiq);
+  play(G3, semiq);
+  play(A3, semiq);
+  play(B3, semiq);
   // bar 40
-  rest(crot);
-  play(A3, dot_minim);
+  play(G3, quav);
+  play(B3, semiq);
+  play(A3, semiq);
+
+  play(B3, quav);
+  play(CS4, semiq);
+  play(D4, semiq);
+
+  play(A3, semiq);
+  play(B3, semiq);
+  play(CS4, semiq);
+  play(D4, semiq);
+
+  play(E4, semiq);
+  play(FS4, semiq);
+  play(G4, semiq);
+  play(A4, semiq);
   // bar 41
-  rest(semib);
-  set_tempo(default_tempo);
+  play(FS4, quav);
+  play(D4, semiq);
+  play(E4, semiq);
+
+  play(FS4, quav);
+  play(E3, semiq);
+  play(D4, semiq);
+
+  play(E4, semiq);
+  play(CS4, semiq);
+  play(D4, semiq);
+  play(E4, semiq);
+
+  play(FS4, semiq);
+  play(E4, semiq);
+  play(D4, semiq);
+  play(CS4, semiq);
+  // bar 42
+  play(D4, quav);
+  play(B4, semiq);
+  play(CS4, semiq);
+
+  play(D4, quav);
+  play(D3, semiq);
+  play(E3, semiq);
+
+  play(FS3, semiq);
+  play(G3, semiq);
+  play(FS3, semiq);
+  play(E3, semiq);
+
+  play(FS3, semiq);
+  play(D4, semiq);
+  play(CS4, semiq);
+  play(D4, semiq);
+  // bar 43
+  play(B3, quav);
+  play(D4, semiq);
+  play(CS4, semiq);
+
+  play(B3, quav);
+  play(A3, semiq);
+  play(G3, semiq);
+
+  play(A3, semiq);
+  play(G3, semiq);
+  play(FS3, semiq);
+  play(G3, semiq);
+
+  play(A3, semiq);
+  play(B3, semiq);
+  play(CS4, semiq);
+  play(D4, semiq);
+  // bar 44
+  play(B3, quav);
+  play(D4, semiq);
+  play(CS4, semiq);
+
+  play(D4, quav);
+  play(D4, semiq);
+  play(CS4, semiq);
+
+  play(CS4, semiq);
+  play(D4, semiq);
+  play(E4, semiq);
+  play(D4, semiq);
+
+  play(CS4, semiq);
+  play(D4, semiq);
+  play(B3, semiq);
+  play(CS4, semiq);
+  // bar 45
+  play(D4, crot + quav);
+  play(FS4, quav);
+  play(FS4, quav);
+  play(G4, quav);
+  play(FS4, quav);
+  play(E4, quav);
+  // bar 46
+  play(D4, crot + quav);
+  play(D4, quav);
+  play(D4, quav);
+  play(E4, quav);
+  play(D4, quav);
+  play(CS4, quav);
+  // bar 47
+  play(B3, minim);
+  play(D4, minim);
+  // bar 48
+  play(D4, quav);
+  play(C4, quav);
+  play(B3, quav);
+  play(C4, quav);
+  play(A3, crot);
+  play(CS4, crot);
+  // bar 49
+  play(D4, crot + quav);
+  play(A4, quav);
+  play(A4, quav);
+  play(B4, quav);
+  play(A4, quav);
+  play(G4, quav);
+  // bar 50
+  play(FS4, crot + quav);
+  play(FS4, quav);
+  play(FS4, quav);
+  play(G4, quav);
+  play(FS4, quav);
+  play(E4, quav);
+  // bar 51
+  play(D4, quav);
+  play(C4, quav);
+  play(B3, quav);
+  play(C4, quav);
+  play(A4, crot + quav);
+  play(A4, quav);
+  // bar 52
+  play(G3, crot);
+  play(D4, crot);
+  play(CS4, crot + quav);
+  play(CS4, quav);
+  // bar 53
+  play(D4, semib);
 }
