@@ -154,15 +154,12 @@ A tied note is a musical notation represented by a curved line that connects two
 Another example might be two notes, say FS4 the first with a duration value of a crotchet and the second with a duration value of a quaver. We would represent this as play(FS4, crot + quav). And so on.
 
 Compounded Note & Rest Durations
-
 We saw in the above techniques how we were able to compound and manipulate note durations to represent the precise needs of a score to represent ties and triplets. This same technique is equally applicable to the rest and trill functions where note durations are required. In fact, any arithmetic combination is permissible so long as it makes sense, for example play(DS5, minim + crot + quav), rest(crot + quav), trill(G2, GS2, dot_minim + quav/2), etc.
 
 Tempos
-
 Whilst the sketch provides a list of standard tempo definitions, any value may be specified by the set_tempo function. So, if you need a tempo that is not in the standard list then simply specify your own For example set_tempo(95) which is between maestroso (88 beats per minute) and moderato (100 beats per minute), and so on.
 
 Repeats
-
 Often a section of a score is repeated. Rather than duplicating the same set and series of notes/rests it can be helpful to use labels and the (dreaded) goto statement. To do this it will be necessary to detect if a section of the score has been repeated or not. This can be managed using a simple variable which has one of two states - 0 if the repeat section has not yet been repeated and 1 otherwise. For example:
 
 ...
@@ -175,7 +172,14 @@ play(C4, quav);
 play(D4, crot+quav);  // dotted crotchet
 play(C4, quav);
 ...
-If (repeated == 0){repeated = 1; goto repeat;}
+If (repeated == 0){
+  repeated = 1; 
+  play(A3, crot);
+  rest(crot);
+  play(C4, crot);
+  play(D4, crot);
+  goto repeat;
+}
 // continue with the rest of the score...
 
 My apologies to the purists amongst you but in this instance the use of a goto is simple, clear and easily implemented, even with scores having multiple repeated sections.
