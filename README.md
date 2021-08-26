@@ -41,40 +41,72 @@ Let's look at an example of a familiar tune (Happy Birthday):
 
 
  // Happy Birthday
+ 
  set_tempo(default_tempo);
+ 
  // bar 1
+ 
  play(G3, quav);
+ 
  play(G3, quav);
+ 
  play(A3, crot);
+ 
  play(G3, crot);
+ 
  // bar 2
+ 
  play(C4, crot);
  play(B3, minim);
  // bar 3
  play(G3, quav);
+ 
  play(G3, quav);
+ 
  play(A3, crot);
+ 
  play(G3, crot);
+ 
  // bar 4
+ 
  play(D4, crot);
+ 
  play(C4, minim);
+ 
  // bar 5
+ 
  play(G3, quav);
+ 
  play(G3, quav);
+ 
  play(G4, crot);
+ 
  play(E4, crot);
+ 
  // bar 6
+ 
  play(C4, crot);
+ 
  play(B3, crot);
+ 
  play(A3, crot);
+ 
  // bar 7
+ 
  play(F4, quav);
+ 
  play(F4, quav);
+ 
  play(E4, crot);
+ 
  play(C4, crot);
+ 
  // bar 8
+ 
  play(D4, crot);
+ 
  play(C4, minim);
+ 
  
 To notice about the above example is:
 
@@ -86,21 +118,37 @@ To notice about the above example is:
 Let's look at another short example, one you will know when you play it:
 
  set_tempo(default_tempo * 2); // lively pace
- // 3/4 time
- // bar 1
- play(C4, minim);
- play(G3, crot);
- // bar 2
- play(G3, crot);
- play(GS3, minim);
- // bar 3
- play(G3, minim);
- rest(crot);
- // bar 4
- play(B3, minim);
- play(C4, crot);
- set_tempo(default_tempo); // reset tempo 
  
+ 
+// 3/4 time
+
+// bar 1
+
+play(C4, minim);
+
+play(G3, crot);
+
+// bar 2
+
+play(G3, crot);
+
+play(GS3, minim);
+
+// bar 3
+
+play(G3, minim);
+
+rest(crot);
+
+// bar 4
+
+play(B3, minim);
+
+play(C4, crot);
+
+set_tempo(default_tempo); // reset tempo 
+
+
 To notice about the above example is:
 
 - we up the tempo to twice the default - 240 beats per minute
@@ -110,42 +158,78 @@ To notice about the above example is:
 And, finally in this section, let's look back at Happy Birthday, this time we will add a trill at the start of each odd bar:
 
  // Happy trill Birthday
- set_tempo(default_tempo);
- // 3/4 time
- // bar 1
- trill(G3, GS3, quav);
- play(G3, quav);
- play(A3, crot);
- play(G3, crot);
- // bar 2
- play(C4, crot);
- play(B3, minim);
- // bar 3
- trill(G3, GS3, quav);
- play(G3, quav);
- play(A3, crot);
- play(G3, crot);
- // bar 4
- play(D4, crot);
- play(C4, minim);
- // bar 5
- trill(G3, GS3, quav);
- play(G3, quav);
- play(G4, crot);
- play(E4, crot);
- // bar 6
- play(C4, crot);
- play(B3, crot);
- play(A3, crot);
- // bar 7
- trill(F4, FS4, quav);
- play(F4, quav);
- play(E4, crot);
- play(C4, crot);
- // bar 8
- play(D4, crot);
- play(C4, minim);
- 
+
+set_tempo(default_tempo);
+
+// 3/4 time
+
+// bar 1
+
+trill(G3, GS3, quav);
+
+play(G3, quav);
+
+play(A3, crot);
+
+play(G3, crot);
+
+// bar 2
+
+play(C4, crot);
+
+play(B3, minim);
+
+// bar 3
+
+trill(G3, GS3, quav);
+
+play(G3, quav);
+
+play(A3, crot);
+
+play(G3, crot);
+
+// bar 4
+
+play(D4, crot);
+
+play(C4, minim);
+
+// bar 5
+
+trill(G3, GS3, quav);
+
+play(G3, quav);
+
+play(G4, crot);
+
+play(E4, crot);
+
+// bar 6
+
+play(C4, crot);
+
+play(B3, crot);
+
+play(A3, crot);
+
+// bar 7
+
+trill(F4, FS4, quav);
+
+play(F4, quav);
+
+play(E4, crot);
+
+play(C4, crot);
+
+// bar 8
+
+play(D4, crot);
+
+play(C4, minim);
+
+
 It is the same melody we are used to but with a little twist. The trill function is a simple implementation of a trill, but should provide some interest in your scores.
 
 Hopefully, by this point you understand the principles being applied?
@@ -157,9 +241,13 @@ Triplets
 A triplet is a single beat of the score's time signature divided into three notes of equal time duration and is normally indicated by a '3' above the triplet notes. This is easily modelled, for example if we have the following three notes defined as a triplet - A3, AS3 and B3 then we would simply transcribe this as:
 
 // crotchet triplet
+
 play(A3, crot/3);
+
 play(AS3, crot/3); 
+
 play(B3, crot/3);
+
 
 The same idea would apply for any division.
 
@@ -182,24 +270,42 @@ Repeats
 Often a section of a score is repeated. Rather than duplicating the same set and series of notes/rests it can be helpful to use labels and the (dreaded) goto statement. To do this it will be necessary to detect if a section of the score has been repeated or not. This can be managed using a simple variable which has one of two states - 0 if the repeat section has not yet been repeated and 1 otherwise. For example:
 
 ...
+
 uint8_t repeated = 0;
+
 ...
 repeat_1:
+
 play(B3, crot);
+
 rest(quav);
+
 play(C4, quav);
+
 play(D4, crot+quav);  // dotted crotchet
+
 play(C4, quav);
+
 ...
+
 If (repeated == 0){
-  repeated = 1; 
-  play(A3, crot);
-  rest(crot);
-  play(C4, crot);
-  play(D4, crot);
-  goto repeat;
+
+repeated = 1; 
+
+play(A3, crot);
+
+rest(crot);
+
+play(C4, crot);
+
+play(D4, crot);
+
+goto repeat;
+
 }
+
 // continue with the rest of the score...
+
 
 My apologies to the purists amongst you but in this instance the use of a goto is simple, clear and easily implemented, even with scores having multiple repeated sections.
 
@@ -214,14 +320,23 @@ The Let's Make Music sketch includes all of the musical data and functions neede
 The music score functions provided OOTB are:
 
 middle_C
+
 twinkle_twinkle (little star)
+
 jingle_bells
+
 happy_birthday
+
 ditty_1
+
 door_bell_1
+
 door_bell_2
+
 ode_to_joy (Beethoven)
+
 canon_in_D (Pachelbel)
+
 
 Finally
 
