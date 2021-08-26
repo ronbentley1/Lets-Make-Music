@@ -27,7 +27,7 @@ trill - performs a trill with the given two notes continually one after the othe
 wait - waits for the given duration (seconds or part thereof) , eg wait(5.5) waits for 5.5 seconds, wait(minim) waits for the duration of a minim, etc. This function is used by the play and rest functions but it is may also for used in the end user code.
 Let's look at an example of a familiar tune (Happy Birthday):
 
- // Happy
+ // Happy Birthday
  set_tempo(default_tempo);
  // bar 1
  play(G3, quav);
@@ -62,6 +62,7 @@ Let's look at an example of a familiar tune (Happy Birthday):
  // bar 8
  play(D4, crot);
  play(C4, minim);
+ 
 To notice about the above example is:
 
 the tempo for the score has been set to default_tempo (120 beats per minute)
@@ -85,6 +86,7 @@ Let's look at another short example, one you will know when you play it:
  play(B3, minim);
  play(C4, crot);
  set_tempo(default_tempo); // reset tempo 
+ 
 To notice about the above example is:
 
 we up the tempo to twice the default - 240 beats per minute
@@ -92,6 +94,7 @@ we introduce a short rest in the middle of the piece at bar 3 worth one crot(che
 we reset the tempo to default when the piece finishes.
 And, finally in this section, let's look back at Happy Birthday, this time we will add a trill at the start of each odd bar:
 
+ // Happy trill Birthday
  set_tempo(default_tempo);
  // 3/4 time
  // bar 1
@@ -127,6 +130,7 @@ And, finally in this section, let's look back at Happy Birthday, this time we wi
  // bar 8
  play(D4, crot);
  play(C4, minim);
+ 
 It is the same melody we are used to but with a little twist. The trill function is a simple implementation of a trill, but should provide some interest in your scores.
 
 Hopefully, by this point you understand the principles being applied?
@@ -140,6 +144,7 @@ A triplet is a single beat of the score's time signature divided into three note
 play(A3, crot/3);
 play(AS3, crot/3); 
 play(B3, crot/3);
+
 The same idea would apply for any division.
 
 Ties
@@ -172,10 +177,10 @@ play(C4, quav);
 ...
 If (repeated == 0){repeated = 1; goto repeat;}
 // continue with the rest of the score...
+
 My apologies to the purists amongst you but in this instance the use of a goto is simple, clear and easily implemented, even with scores having multiple repeated sections.
 
 Transcribing a Score
-
 It helps to be neat and tidy when coding a musical score into commands. Work bar by bar according to the score's time signature, commenting each bar with its bar number and adding any other comments that may be helpful. This approach assist in debugging your code as I can guarantee that you will introduce incorrect notes and/or note/rest durations. Listening to the score playing for accuracy whilst reading through the code bar by bar soon identifies where things are wrong.
 
 Out of the Box
@@ -192,6 +197,7 @@ door_bell_1
 door_bell_2
 ode_to_joy (Beethoven)
 canon_in_D (Pachelbel)
+
 Finally
 The Let's Make Music sketch is all about having some fun making music with Arduino. It is not overly sophisticated, but provides a few simple and basic commands that yield very good results. Download the Crib Sheet as a handy and quick reference to all of the sketch's musical data definitions and functions.
 
