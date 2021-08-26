@@ -1,14 +1,17 @@
 # Lets-Make-Music
 
 Let's Make Music in a Nut Shell
+
 If you love Arduino and have a rudimentary understanding of music then why not have some fun with Let's Make Music?
 
 With a very basic kit list and using very few, very short and basic functions, it is possible to craft quite detailed musical scores to play on a simply configured Arduino and speaker. The results can be quite startling and rewarding!
 
 Origins
+
 This article, and the accompanying sketch, originates from a previously published article called "Music & Lights Workbench" which I developed to introduce my grandchildren to the concepts of computer programming. We had so much fun in using the Workbench that I have decided to strip it down, remodel and represent it as a sketch exclusively comprising its music elements; one that can be readily used by anyone wishing to explore crafting musical scores on Arduino.
 
 The Hardware
+
 Couldn't be simpler - all you will need is an Arduino microcontroller (any should be okay), a 100 ohm resistor, a small bread board, some wires and, preferably, an 8 ohm 0.25 watt speaker (or a buzzer if you don't have a speaker to hand).
 
 The wiring diagram is as shown below at Schematics, but is is a very simple circuit to put together. I should advise that the microcontroller should not be connected to anything but a speaker/buzzer as outlined, otherwise you may damage your microcontroller.
