@@ -26,16 +26,15 @@ The sketch includes everything needed to put together your own musical scores an
 
 The sketch provides five functions you can use for creating and playing music. These are:
 
+- set_tempo - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
 
-set_tempo - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
+- play - will play the given note for the given duration, eg play(C3, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F#2 for the duration of a crotchet + a quaver, etc.
 
-play - will play the given note for the given duration, eg play(C3, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F#2 for the duration of a crotchet + a quaver, etc.
+- rest - rests for the given duration, during which time silence is maintained, eg rest(quav), rest(0.5), etc.
 
-rest - rests for the given duration, during which time silence is maintained, eg rest(quav), rest(0.5), etc.
+- trill - performs a trill with the given two notes continually one after the other for the given duration, eg trill(C4, CS4, minim), trill(E3, F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
 
-trill - performs a trill with the given two notes continually one after the other for the given duration, eg trill(C4, CS4, minim), trill(E3, F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
-
-wait - waits for the given duration (seconds or part thereof) , eg wait(5.5) waits for 5.5 seconds, wait(minim) waits for the duration of a minim, etc. This function is used by the play and rest functions but it is may also for used in the end user code.
+- wait - waits for the given duration (seconds or part thereof) , eg wait(5.5) waits for 5.5 seconds, wait(minim) waits for the duration of a minim, etc. This function is used by the play and rest functions but it is may also for used in the end user code.
 
 
 Let's look at an example of a familiar tune (Happy Birthday):
