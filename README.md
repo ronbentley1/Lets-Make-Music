@@ -57,8 +57,11 @@ Let's look at an example of a familiar tune (Happy Birthday):
  // bar 2
  
  play(C4, crot);
+ 
  play(B3, minim);
+ 
  // bar 3
+ 
  play(G3, quav);
  
  play(G3, quav);
@@ -117,8 +120,7 @@ To notice about the above example is:
 
 Let's look at another short example, one you will know when you play it:
 
- set_tempo(default_tempo * 2); // lively pace
- 
+set_tempo(default_tempo * 2); // lively pace
  
 // 3/4 time
 
@@ -157,7 +159,7 @@ To notice about the above example is:
 
 And, finally in this section, let's look back at Happy Birthday, this time we will add a trill at the start of each odd bar:
 
- // Happy trill Birthday
+// Happy trill Birthday
 
 set_tempo(default_tempo);
 
@@ -319,23 +321,15 @@ The Let's Make Music sketch includes all of the musical data and functions neede
 
 The music score functions provided OOTB are:
 
-middle_C
-
-twinkle_twinkle (little star)
-
-jingle_bells
-
-happy_birthday
-
-ditty_1
-
-door_bell_1
-
-door_bell_2
-
-ode_to_joy (Beethoven)
-
-canon_in_D (Pachelbel)
+- middle_C
+- twinkle_twinkle (little star)
+- jingle_bells
+- happy_birthday
+- ditty_1
+- door_bell_1
+- door_bell_2
+- ode_to_joy (Beethoven)
+- canon_in_D (Pachelbel)
 
 
 Finally
