@@ -214,7 +214,7 @@ void setup() {
 
 void loop() {
   // some music examples...
-  
+
   middle_C();
   wait(3);
 
@@ -507,81 +507,81 @@ void door_bell_2() {// basic bing/bong door chime
 void ode_to_joy() {
   set_tempo(allegro);
   // 4/4 time
-  //bar 1 
+  //bar 1
   play(B4, crot);
   play(B4, crot);
   play(C5, crot);
   play(D5, crot);
-  //bar 2 
+  //bar 2
   play(D5, crot);
   play(C5, crot);
   play(B4, crot);
   play(A4, crot);
-  //bar 3 
+  //bar 3
   play(G4, crot);
   play(G4, crot);
   play(A4, crot);
   play(B4, crot);
-  //bar 4 
+  //bar 4
   play(B4, crot + quav);
   play(A4, quav);
   play(A4, minim);
-  //bar 5 
+  //bar 5
   play(B4, crot);
   play(B4, crot);
   play(C5, crot);
   play(D5, crot);
-  //bar 6 
+  //bar 6
   play(D5, crot);
   play(C5, crot);
   play(B4, crot);
   play(A4, crot);
-  //bar 7 
+  //bar 7
   play(G4, crot);
   play(G4, crot);
   play(A4, crot);
   play(B4, crot);
-  //bar 8 
+  //bar 8
   play(A4, crot + quav);
   play(G4, quav);
   play(G4, minim);
-  //bar 9 
+  //bar 9
   play(A4, crot);
   play(A4, crot);
   play(B4, crot);
   play(G4, crot);
-  //bar 10 
+  //bar 10
   play(A4, crot);
   play(B4, quav);
   play(C5, quav);
   play(B4, crot);
   play(G4, crot);
-  //bar 11 
+  //bar 11
   play(A4, crot);
   play(B4, quav);
   play(C5, quav);
   play(B4, crot);
   play(A4, crot);
-  //bar 12 
+  //bar 12
   play(G4, crot);
   play(A4, crot);
   play(D4, minim);
-  //bar 13 
+  //bar 13
   play(B4, crot);
   play(B4, crot);
   play(C5, crot);
   play(D5, crot);
-  //bar 14 
+  //bar 14
   play(D5, crot);
   play(C5, crot);
   play(B4, crot);
   play(A4, crot);
-  //bar 15 
+  //bar 15
   play(G4, crot);
   play(G4, crot);
   play(A4, crot);
   play(B4, crot);
-  //bar 16 
+  //bar 16
   play(A4, crot + quav);
   play(G4, quav);
   play(G4, minim);
@@ -653,7 +653,7 @@ void canon_in_D() {
   // bar 20
   play(E4, crot);
   play(D5, crot);
-  play(D4, crot + quav);
+  play(D5, crot + quav);
   play(CS5, quav);
   // bar 21
   play(D5, quav);
@@ -950,10 +950,10 @@ void canon_in_D() {
   // bar 51
   play(D5, quav);
   play(C5, quav);
-  play(B5, quav);
+  play(B4, quav);
   play(C5, quav);
-  play(A5, crot + quav);
-  play(A5, quav);
+  play(A4, crot + quav);
+  play(A4, quav);
   // bar 52
   play(G4, crot);
   play(D5, crot);
