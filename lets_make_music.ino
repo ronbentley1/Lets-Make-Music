@@ -214,7 +214,7 @@ void setup() {
 
 void loop() {
   // some music examples...
-
+  
   middle_C();
   wait(3);
 
@@ -253,28 +253,28 @@ void middle_C() {
   // 4/4 time
   // C major scale - up
   // bar 1
-  play(C3, crot);
-  play(D3, crot);
-  play(E3, crot);
-  play(F3, crot);
-  // bar 2
-  play(G3, crot);
-  play(A3, crot);
-  play(B3, crot);
   play(C4, crot);
+  play(D4, crot);
+  play(E4, crot);
+  play(F4, crot);
+  // bar 2
+  play(G4, crot);
+  play(A4, crot);
+  play(B4, crot);
+  play(C5, crot);
   // bar 3
   rest(semib);
   // C major scale - down
   // bar 4
-  play(C4, crot);
-  play(B3, crot);
-  play(A3, crot);
-  play(G3, crot);
+  play(C5, crot);
+  play(B4, crot);
+  play(A4, crot);
+  play(G4, crot);
   // bar 5
-  play(F3, crot);
-  play(E3, crot);
-  play(D3, crot);
-  play(C3, crot);
+  play(F4, crot);
+  play(E4, crot);
+  play(D4, crot);
+  play(C4, crot);
 }
 
 void twinkle_twinkle() {
@@ -508,83 +508,83 @@ void ode_to_joy() {
   set_tempo(allegro);
   // 4/4 time
   //bar 1 
-  play(B3, crot);
-  play(B3, crot);
-  play(C4, crot);
-  play(D4, crot);
+  play(B4, crot);
+  play(B4, crot);
+  play(C5, crot);
+  play(D5, crot);
   //bar 2 
-  play(D4, crot);
-  play(C4, crot);
-  play(B3, crot);
-  play(A3, crot);
+  play(D5, crot);
+  play(C5, crot);
+  play(B4, crot);
+  play(A4, crot);
   //bar 3 
-  play(G3, crot);
-  play(G3, crot);
-  play(A3, crot);
-  play(B3, crot);
+  play(G4, crot);
+  play(G4, crot);
+  play(A4, crot);
+  play(B4, crot);
   //bar 4 
-  play(B3, crot + quav);
-  play(A3, quav);
-  play(A3, minim);
+  play(B4, crot + quav);
+  play(A4, quav);
+  play(A4, minim);
   //bar 5 
-  play(B3, crot);
-  play(B3, crot);
-  play(C4, crot);
-  play(D4, crot);
+  play(B4, crot);
+  play(B4, crot);
+  play(C5, crot);
+  play(D5, crot);
   //bar 6 
-  play(D4, crot);
-  play(C4, crot);
-  play(B3, crot);
-  play(A3, crot);
+  play(D5, crot);
+  play(C5, crot);
+  play(B4, crot);
+  play(A4, crot);
   //bar 7 
-  play(G3, crot);
-  play(G3, crot);
-  play(A3, crot);
-  play(B3, crot);
+  play(G4, crot);
+  play(G4, crot);
+  play(A4, crot);
+  play(B4, crot);
   //bar 8 
-  play(A3, crot + quav);
-  play(G3, quav);
-  play(G3, minim);
+  play(A4, crot + quav);
+  play(G4, quav);
+  play(G4, minim);
   //bar 9 
-  play(A3, crot);
-  play(A3, crot);
-  play(B3, crot);
-  play(G3, crot);
+  play(A4, crot);
+  play(A4, crot);
+  play(B4, crot);
+  play(G4, crot);
   //bar 10 
-  play(A3, crot);
-  play(B3, quav);
-  play(C4, quav);
-  play(B3, crot);
-  play(G3, crot);
+  play(A4, crot);
+  play(B4, quav);
+  play(C5, quav);
+  play(B4, crot);
+  play(G4, crot);
   //bar 11 
-  play(A3, crot);
-  play(B3, quav);
-  play(C4, quav);
-  play(B3, crot);
-  play(A3, crot);
+  play(A4, crot);
+  play(B4, quav);
+  play(C5, quav);
+  play(B4, crot);
+  play(A4, crot);
   //bar 12 
-  play(G3, crot);
-  play(A3, crot);
-  play(D3, minim);
+  play(G4, crot);
+  play(A4, crot);
+  play(D4, minim);
   //bar 13 
-  play(B3, crot);
-  play(B3, crot);
-  play(C4, crot);
-  play(D4, crot);
+  play(B4, crot);
+  play(B4, crot);
+  play(C5, crot);
+  play(D5, crot);
   //bar 14 
-  play(D4, crot);
-  play(C4, crot);
-  play(B3, crot);
-  play(A3, crot);
+  play(D5, crot);
+  play(C5, crot);
+  play(B4, crot);
+  play(A4, crot);
   //bar 15 
-  play(G3, crot);
-  play(G3, crot);
-  play(A3, crot);
-  play(B3, crot);
+  play(G4, crot);
+  play(G4, crot);
+  play(A4, crot);
+  play(B4, crot);
   //bar 16 
-  play(A3, crot + quav);
-  play(G3, quav);
-  play(G3, minim);
+  play(A4, crot + quav);
+  play(G4, quav);
+  play(G4, minim);
 }
 
 void canon_in_D() {
@@ -592,373 +592,373 @@ void canon_in_D() {
   // 4/4 time
   // melody starts at bar 5
   // bar 5
-  play(FS4, minim);
-  play(E4, minim);
+  play(FS5, minim);
+  play(E5, minim);
   // bar 6
-  play(D4, minim);
-  play(CS4, minim);
+  play(D5, minim);
+  play(CS5, minim);
   // bar 7
-  play(B3, minim);
-  play(A3, minim);
-  // bar 8
-  play(B3, minim);
-  play(CS4, minim);
-  // bar 9
-  play(FS4, minim);
-  play(E4, minim);
-  // bar 10
-  play(D4, minim);
-  play(CS4, minim);
-  // bar 11
-  play(B3, minim);
-  play(A3, minim);
-  // bar 12
-  play(B3, minim);
-  play(CS4, minim);
-  // bar 13
-  play(D3, crot);
-  play(FS3, crot);
-  play(A3, crot);
-  play(G3, crot);
-  // bar 14
-  play(FS3, crot);
-  play(D3, crot);
-  play(FS3, crot);
-  play(E3, crot);
-  // bar 15
-  play(D3, crot);
-  play(B2, crot);
-  play(D3, crot);
-  play(A3, crot);
-  // bar 16
-  play(G3, crot);
-  play(B3, crot);
-  play(A3, crot);
-  play(G3, crot);
-  // bar 17
-  play(FS3, crot);
-  play(D3, crot);
-  play(E3, crot);
-  play(CS4, crot);
-  // bar 18
-  play(D4, crot);
-  play(FS4, crot);
-  play(A4, crot);
-  play(A3, crot);
-  // bar 19
-  play(B3, crot);
-  play(G3, crot);
-  play(A3, crot);
-  play(FS3, crot);
-  // bar 20
-  play(E3, crot);
-  play(D4, crot);
-  play(D3, crot + quav);
-  play(CS4, quav);
-  // bar 21
-  play(D4, quav);
-  play(CS4, quav);
-  play(D4, quav);
-  play(D3, quav);
-
-  play(CS3, quav);
-  play(A3, quav);
-  play(E3, quav);
-  play(FS3, quav);
-  // bar 22
-  play(D3, quav);
-  play(D4, quav);
-  play(CS4, quav);
-  play(B3, quav);
-
-  play(CS4, quav);
-  play(FS4, quav);
-  play(A4, quav);
-  play(B4, quav);
-  // bar 23
-  play(G4, quav);
-  play(FS4, quav);
-  play(E4, quav);
-  play(G4, quav);
-
-  play(FS4, quav);
-  play(E4, quav);
-  play(D4, quav);
-  play(CS4, quav);
-  // bar 24
-  play(B3, quav);
-  play(A3, quav);
-  play(G3, quav);
-  play(FS3, quav);
-
-  play(E3, quav);
-  play(G3, quav);
-  play(FS3, quav);
-  play(E3, quav);
-  // bar 25
-  play(D3, quav);
-  play(E3, quav);
-  play(FS3, quav);
-  play(G3, quav);
-
-  play(A3, quav);
-  play(E3, quav);
-  play(A3, quav);
-  play(G3, quav);
-  // bar 26
-  play(FS3, quav);
-  play(B3, quav);
-  play(A3, quav);
-  play(G3, quav);
-
-  play(A3, quav);
-  play(G3, quav);
-  play(FS3, quav);
-  play(E3, quav);
-  // bar 27
-  play(D3, quav);
-  play(B2, quav);
-  play(B3, quav);
-  play(CS4, quav);
-
-  play(D4, quav);
-  play(CS4, quav);
-  play(B3, quav);
-  play(A3, quav);
-  // bar 28
-  play(G3, quav);
-  play(FS3, quav);
-  play(E3, quav);
-  play(B3, quav);
-
-  play(A3, quav);
-  play(B3, quav);
-  play(A3, quav);
-  play(G3, quav);
-  // bar 29
-  play(FS3, crot);
-  play(FS4, crot);
-  play(E4, minim);
-  // bar 30
-  rest(crot);
-  play(D4, crot);
-  play(FS4, minim);
-  // bar 31
   play(B4, minim);
   play(A4, minim);
-  // bar 32
+  // bar 8
   play(B4, minim);
   play(CS5, minim);
-  // bar 33
-  play(D5, crot);
+  // bar 9
+  play(FS5, minim);
+  play(E5, minim);
+  // bar 10
+  play(D5, minim);
+  play(CS5, minim);
+  // bar 11
+  play(B4, minim);
+  play(A4, minim);
+  // bar 12
+  play(B4, minim);
+  play(CS5, minim);
+  // bar 13
   play(D4, crot);
-  play(CS4, minim);
-  // bar 34
-  rest(crot);
-  play(B4, crot);
-  play(D4, minim);
-  // bar 35
-  play(D4, dot_minim);
-  play(D4, crot);
-  // bar 36
-  play(D4, crot);
-  play(G4, crot);
-  play(E4, crot);
+  play(FS4, crot);
   play(A4, crot);
-  // bar 37
-  play(A4, quav);
-  play(FS4, semiq);
-  play(G4, semiq);
-
-  play(A4, quav);
-  play(FS4, semiq);
-  play(G4, semiq);
-
-  play(A4, semiq);
-  play(A3, semiq);
-  play(B3, semiq);
-  play(CS4, semiq);
-
-  play(D4, semiq);
-  play(E4, semiq);
-  play(FS4, semiq);
-  play(G4, semiq);
-  // bar 38
-  play(FS4, quav);
-  play(D4, semiq);
-  play(E4, semiq);
-
-  play(FS4, quav);
-  play(FS3, semiq);
-  play(G3, semiq);
-
-  play(A3, semiq);
-  play(B3, semiq);
-  play(A3, semiq);
-  play(G3, semiq);
-
-  play(A3, semiq);
-  play(FS3, semiq);
-  play(G3, semiq);
-  play(A3, semiq);
-  // bar 39
-  play(G3, quav);
-  play(B3, semiq);
-  play(A3, semiq);
-
-  play(G3, quav);
-  play(FS3, semiq);
-  play(E3, semiq);
-
-  play(FS3, semiq);
-  play(E3, semiq);
-  play(D3, semiq);
-  play(E3, semiq);
-
-  play(FS3, semiq);
-  play(G3, semiq);
-  play(A3, semiq);
-  play(B3, semiq);
-  // bar 40
-  play(G3, quav);
-  play(B3, semiq);
-  play(A3, semiq);
-
-  play(B3, quav);
-  play(CS4, semiq);
-  play(D4, semiq);
-
-  play(A3, semiq);
-  play(B3, semiq);
-  play(CS4, semiq);
-  play(D4, semiq);
-
-  play(E4, semiq);
-  play(FS4, semiq);
-  play(G4, semiq);
-  play(A4, semiq);
-  // bar 41
-  play(FS4, quav);
-  play(D4, semiq);
-  play(E4, semiq);
-
-  play(FS4, quav);
-  play(E3, semiq);
-  play(D4, semiq);
-
-  play(E4, semiq);
-  play(CS4, semiq);
-  play(D4, semiq);
-  play(E4, semiq);
-
-  play(FS4, semiq);
-  play(E4, semiq);
-  play(D4, semiq);
-  play(CS4, semiq);
-  // bar 42
-  play(D4, quav);
-  play(B4, semiq);
-  play(CS4, semiq);
-
-  play(D4, quav);
-  play(D3, semiq);
-  play(E3, semiq);
-
-  play(FS3, semiq);
-  play(G3, semiq);
-  play(FS3, semiq);
-  play(E3, semiq);
-
-  play(FS3, semiq);
-  play(D4, semiq);
-  play(CS4, semiq);
-  play(D4, semiq);
-  // bar 43
-  play(B3, quav);
-  play(D4, semiq);
-  play(CS4, semiq);
-
-  play(B3, quav);
-  play(A3, semiq);
-  play(G3, semiq);
-
-  play(A3, semiq);
-  play(G3, semiq);
-  play(FS3, semiq);
-  play(G3, semiq);
-
-  play(A3, semiq);
-  play(B3, semiq);
-  play(CS4, semiq);
-  play(D4, semiq);
-  // bar 44
-  play(B3, quav);
-  play(D4, semiq);
-  play(CS4, semiq);
-
-  play(D4, quav);
-  play(D4, semiq);
-  play(CS4, semiq);
-
-  play(CS4, semiq);
-  play(D4, semiq);
-  play(E4, semiq);
-  play(D4, semiq);
-
-  play(CS4, semiq);
-  play(D4, semiq);
-  play(B3, semiq);
-  play(CS4, semiq);
-  // bar 45
+  play(G4, crot);
+  // bar 14
+  play(FS4, crot);
+  play(D4, crot);
+  play(FS4, crot);
+  play(E4, crot);
+  // bar 15
+  play(D4, crot);
+  play(B3, crot);
+  play(D4, crot);
+  play(A4, crot);
+  // bar 16
+  play(G4, crot);
+  play(B4, crot);
+  play(A4, crot);
+  play(G4, crot);
+  // bar 17
+  play(FS4, crot);
+  play(D4, crot);
+  play(E4, crot);
+  play(CS5, crot);
+  // bar 18
+  play(D5, crot);
+  play(FS5, crot);
+  play(A5, crot);
+  play(A4, crot);
+  // bar 19
+  play(B4, crot);
+  play(G4, crot);
+  play(A4, crot);
+  play(FS4, crot);
+  // bar 20
+  play(E4, crot);
+  play(D5, crot);
   play(D4, crot + quav);
+  play(CS5, quav);
+  // bar 21
+  play(D5, quav);
+  play(CS5, quav);
+  play(D5, quav);
+  play(D4, quav);
+
+  play(CS4, quav);
+  play(A4, quav);
+  play(E4, quav);
   play(FS4, quav);
+  // bar 22
+  play(D4, quav);
+  play(D5, quav);
+  play(CS5, quav);
+  play(B4, quav);
+
+  play(CS5, quav);
+  play(FS5, quav);
+  play(A5, quav);
+  play(B5, quav);
+  // bar 23
+  play(G5, quav);
+  play(FS5, quav);
+  play(E5, quav);
+  play(G5, quav);
+
+  play(FS5, quav);
+  play(E5, quav);
+  play(D5, quav);
+  play(CS5, quav);
+  // bar 24
+  play(B4, quav);
+  play(A4, quav);
+  play(G4, quav);
   play(FS4, quav);
+
+  play(E4, quav);
   play(G4, quav);
   play(FS4, quav);
   play(E4, quav);
-  // bar 46
-  play(D4, crot + quav);
-  play(D4, quav);
+  // bar 25
   play(D4, quav);
   play(E4, quav);
-  play(D4, quav);
-  play(CS4, quav);
-  // bar 47
-  play(B3, minim);
-  play(D4, minim);
-  // bar 48
-  play(D4, quav);
-  play(C4, quav);
-  play(B3, quav);
-  play(C4, quav);
-  play(A3, crot);
-  play(CS4, crot);
-  // bar 49
-  play(D4, crot + quav);
+  play(FS4, quav);
+  play(G4, quav);
+
   play(A4, quav);
+  play(E4, quav);
+  play(A4, quav);
+  play(G4, quav);
+  // bar 26
+  play(FS4, quav);
+  play(B4, quav);
+  play(A4, quav);
+  play(G4, quav);
+
+  play(A4, quav);
+  play(G4, quav);
+  play(FS4, quav);
+  play(E4, quav);
+  // bar 27
+  play(D4, quav);
+  play(B3, quav);
+  play(B4, quav);
+  play(CS5, quav);
+
+  play(D5, quav);
+  play(CS5, quav);
+  play(B4, quav);
+  play(A4, quav);
+  // bar 28
+  play(G4, quav);
+  play(FS4, quav);
+  play(E4, quav);
+  play(B4, quav);
+
   play(A4, quav);
   play(B4, quav);
   play(A4, quav);
   play(G4, quav);
-  // bar 50
-  play(FS4, crot + quav);
-  play(FS4, quav);
-  play(FS4, quav);
+  // bar 29
+  play(FS4, crot);
+  play(FS5, crot);
+  play(E5, minim);
+  // bar 30
+  rest(crot);
+  play(D5, crot);
+  play(FS5, minim);
+  // bar 31
+  play(B5, minim);
+  play(A5, minim);
+  // bar 32
+  play(B5, minim);
+  play(CS6, minim);
+  // bar 33
+  play(D6, crot);
+  play(D5, crot);
+  play(CS5, minim);
+  // bar 34
+  rest(crot);
+  play(B5, crot);
+  play(D5, minim);
+  // bar 35
+  play(D5, dot_minim);
+  play(D5, crot);
+  // bar 36
+  play(D5, crot);
+  play(G5, crot);
+  play(E5, crot);
+  play(A5, crot);
+  // bar 37
+  play(A5, quav);
+  play(FS5, semiq);
+  play(G5, semiq);
+
+  play(A5, quav);
+  play(FS5, semiq);
+  play(G5, semiq);
+
+  play(A5, semiq);
+  play(A4, semiq);
+  play(B4, semiq);
+  play(CS5, semiq);
+
+  play(D5, semiq);
+  play(E5, semiq);
+  play(FS5, semiq);
+  play(G5, semiq);
+  // bar 38
+  play(FS5, quav);
+  play(D5, semiq);
+  play(E5, semiq);
+
+  play(FS5, quav);
+  play(FS4, semiq);
+  play(G4, semiq);
+
+  play(A4, semiq);
+  play(B4, semiq);
+  play(A4, semiq);
+  play(G4, semiq);
+
+  play(A4, semiq);
+  play(FS4, semiq);
+  play(G4, semiq);
+  play(A4, semiq);
+  // bar 39
   play(G4, quav);
-  play(FS4, quav);
-  play(E4, quav);
+  play(B4, semiq);
+  play(A4, semiq);
+
+  play(G4, quav);
+  play(FS4, semiq);
+  play(E4, semiq);
+
+  play(FS4, semiq);
+  play(E4, semiq);
+  play(D4, semiq);
+  play(E4, semiq);
+
+  play(FS4, semiq);
+  play(G4, semiq);
+  play(A4, semiq);
+  play(B4, semiq);
+  // bar 40
+  play(G4, quav);
+  play(B4, semiq);
+  play(A4, semiq);
+
+  play(B4, quav);
+  play(CS5, semiq);
+  play(D5, semiq);
+
+  play(A4, semiq);
+  play(B4, semiq);
+  play(CS5, semiq);
+  play(D5, semiq);
+
+  play(E5, semiq);
+  play(FS5, semiq);
+  play(G5, semiq);
+  play(A5, semiq);
+  // bar 41
+  play(FS5, quav);
+  play(D5, semiq);
+  play(E5, semiq);
+
+  play(FS5, quav);
+  play(E4, semiq);
+  play(D5, semiq);
+
+  play(E5, semiq);
+  play(CS5, semiq);
+  play(D5, semiq);
+  play(E5, semiq);
+
+  play(FS5, semiq);
+  play(E5, semiq);
+  play(D5, semiq);
+  play(CS5, semiq);
+  // bar 42
+  play(D5, quav);
+  play(B5, semiq);
+  play(CS5, semiq);
+
+  play(D5, quav);
+  play(D4, semiq);
+  play(E4, semiq);
+
+  play(FS4, semiq);
+  play(G4, semiq);
+  play(FS4, semiq);
+  play(E4, semiq);
+
+  play(FS4, semiq);
+  play(D5, semiq);
+  play(CS5, semiq);
+  play(D5, semiq);
+  // bar 43
+  play(B4, quav);
+  play(D5, semiq);
+  play(CS5, semiq);
+
+  play(B4, quav);
+  play(A4, semiq);
+  play(G4, semiq);
+
+  play(A4, semiq);
+  play(G4, semiq);
+  play(FS4, semiq);
+  play(G4, semiq);
+
+  play(A4, semiq);
+  play(B4, semiq);
+  play(CS5, semiq);
+  play(D5, semiq);
+  // bar 44
+  play(B4, quav);
+  play(D5, semiq);
+  play(CS5, semiq);
+
+  play(D5, quav);
+  play(D5, semiq);
+  play(CS5, semiq);
+
+  play(CS5, semiq);
+  play(D5, semiq);
+  play(E5, semiq);
+  play(D5, semiq);
+
+  play(CS5, semiq);
+  play(D5, semiq);
+  play(B4, semiq);
+  play(CS5, semiq);
+  // bar 45
+  play(D5, crot + quav);
+  play(FS5, quav);
+  play(FS5, quav);
+  play(G5, quav);
+  play(FS5, quav);
+  play(E5, quav);
+  // bar 46
+  play(D5, crot + quav);
+  play(D5, quav);
+  play(D5, quav);
+  play(E5, quav);
+  play(D5, quav);
+  play(CS5, quav);
+  // bar 47
+  play(B4, minim);
+  play(D5, minim);
+  // bar 48
+  play(D5, quav);
+  play(C5, quav);
+  play(B4, quav);
+  play(C5, quav);
+  play(A4, crot);
+  play(CS5, crot);
+  // bar 49
+  play(D5, crot + quav);
+  play(A5, quav);
+  play(A5, quav);
+  play(B5, quav);
+  play(A5, quav);
+  play(G5, quav);
+  // bar 50
+  play(FS5, crot + quav);
+  play(FS5, quav);
+  play(FS5, quav);
+  play(G5, quav);
+  play(FS5, quav);
+  play(E5, quav);
   // bar 51
-  play(D4, quav);
-  play(C4, quav);
-  play(B3, quav);
-  play(C4, quav);
-  play(A4, crot + quav);
-  play(A4, quav);
+  play(D5, quav);
+  play(C5, quav);
+  play(B5, quav);
+  play(C5, quav);
+  play(A5, crot + quav);
+  play(A5, quav);
   // bar 52
-  play(G3, crot);
-  play(D4, crot);
-  play(CS4, crot + quav);
-  play(CS4, quav);
+  play(G4, crot);
+  play(D5, crot);
+  play(CS5, crot + quav);
+  play(CS5, quav);
   // bar 53
-  play(D4, semib);
+  play(D5, semib);
 }
