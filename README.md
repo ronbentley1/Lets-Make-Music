@@ -18,7 +18,7 @@ The wiring diagram is as shown below at Schematics, but is is a very simple circ
 
 Capabilities
 
-To give you some idea of the 'lets make music' sketch capabilities, I crafted several quite complex scores such as Penny Lane, Yesterday, Annie's Song, The Black Velvet Band, and others, all of which played faithfully. Unfortunately, I am not able to publish these due to copyright. I have, though, included other examples out-of-the-box (OOTB) which provide helpful demonstrations of capability and guidance to get started on your own scores.
+To give you some idea of the 'lets make music' sketch capabilities, I crafted several quite complex scores such as Penny Lane, Yesterday, Annie's Song, The Black Velvet Band, and others, all of which played faithfully. Unfortunately, I am not able to publish these due to copyright. I have, though, included other examples out-of-the-box (OOTB) which provide helpful demonstrations of capability and guidance to get you started on your own scores.
 
 Let's Make Music
 
@@ -28,7 +28,7 @@ The sketch provides five functions you can use for creating and playing music. T
 
 - set_tempo - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
 
-- play - will play the given note for the given duration, eg play(C3, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F#2 for the duration of a crotchet + a quaver, etc.
+- play - will play the given note for the given duration, eg play(C4, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F#2 for the duration of a crotchet + a quaver, etc.
 
 - rest - rests for the given duration, during which time silence is maintained, eg rest(quav), rest(0.5), etc.
 
