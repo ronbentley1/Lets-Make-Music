@@ -14,7 +14,7 @@ The Hardware
 
 Couldn't be simpler - all you will need is an Arduino microcontroller (any should be okay), a 100 ohm resistor, a small bread board, some wires and, preferably, an 8 ohm 0.25 watt speaker (or a buzzer if you don't have a speaker to hand).
 
-The wiring diagram is as shown below at Schematics, but is is a very simple circuit to put together. I should advise that the microcontroller should not be connected to anything but a speaker/buzzer as outlined, otherwise you may damage your microcontroller.
+The wiring diagram is as shown below at Schematics, but it is a very simple circuit to put together. I should advise that the microcontroller should not be connected to anything but a speaker/buzzer as outlined, otherwise you may damage your microcontroller.
 
 Capabilities
 
@@ -265,7 +265,7 @@ We saw in the above techniques how we were able to compound and manipulate note 
 
 Tempos
 
-Whilst the sketch provides a list of standard tempo definitions, any value may be specified by the set_tempo function. So, if you need a tempo that is not in the standard list then simply specify your own For example set_tempo(95) which is between maestroso (88 beats per minute) and moderato (100 beats per minute), and so on.
+Whilst the sketch provides a list of standard tempo definitions, any value may be specified by the set_tempo function. So, if you need a tempo that is not in the standard list then simply specify your own. For example set_tempo(95) which is between maestroso (88 beats per minute) and moderato (100 beats per minute), and so on.
 
 Repeats
 
@@ -317,7 +317,8 @@ It helps to be neat and tidy when coding a musical score into commands. Work bar
 
 Out of the Box
 
-The Let's Make Music sketch includes all of the musical data and functions needed to put together your own scores. Also included are a number of musical score examples so you can see how the various functions are used and also so that you may play music on your Arduino straight away. The example scores are provided as functions, for convenience, and may be referenced directly from the main void loop in any order. If assembling several score functions, one after the other, then add a wait(..) function call between each so that you get a short break between one ending and the next starting, eg wait(3) will wait for three seconds.
+The Let's Make Music sketch includes all of the musical data and functions needed to put together your own scores. Also included are a number of musical score examples so you can see how the various functions are used and also so that you may play music on your Arduino straight away. 
+The example scores are provided as functions, for convenience, and may be referenced directly from the main void loop in any order. If assembling several score functions, one after the other, then add a wait(..) function call between each so that you get a short break between one ending and the next starting, eg wait(3) will wait for three seconds.
 
 The music score functions provided OOTB are:
 
