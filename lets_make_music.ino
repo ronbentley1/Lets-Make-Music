@@ -39,110 +39,148 @@
 #define B0  31
 #define C1  33
 #define CS1 35
+#define DF1 35
 #define D1  37
 #define DS1 39
+#define EF1 39
 #define E1  41
 #define F1  44
 #define FS1 46
+#define GF1 46
 #define G1  49
 #define GS1 52
+#define AF1 52
 #define A1  55
 #define AS1 58
+#define BF1 58
 #define B1  62
 #define C2  65
 #define CS2 69
+#define DF2 69
 #define D2  73
 #define DS2 78
+#define EF2 78
 #define E2  82
 #define F2  87
 #define FS2 93
+#define GF2 93
 #define G2  98
 #define GS2 104
+#define AF2 104
 #define A2  110
 #define AS2 117
+#define BF2 117
 #define B2  123
 #define C3  131
 #define CS3 139
+#define DF3 139
 #define D3  147
 #define DS3 156
+#define EF3 156
 #define E3  165
 #define F3  175
 #define FS3 185
+#define GF3 185
 #define G3  196
 #define GS3 208
+#define AF3 208
 #define A3  220
 #define AS3 233
+#define BF3 233
 #define B3  247
 #define C4  262 // <--------- middle C
 #define CS4 277
+#define DF4 277
 #define D4  294
 #define DS4 311
+#define EF4 311
 #define E4  330
 #define F4  349
 #define FS4 370
+#define GF4 370
 #define G4  392
 #define GS4 415
+#define AF4 415
 #define A4  440
 #define AS4 466
+#define BF4 466
 #define B4  494
 #define C5  523
 #define CS5 554
+#define DF5 554
 #define D5  587
 #define DS5 622
+#define EF5 622
 #define E5  659
 #define F5  698
 #define FS5 740
+#define GF5 740
 #define G5  784
 #define GS5 831
+#define AF5 831
 #define A5  880
 #define AS5 932
+#define BF5 932
 #define B5  988
 #define C6  1047
 #define CS6 1109
+#define DF6 1109
 #define D6  1175
 #define DS6 1245
+#define EF6 1245
 #define E6  1319
 #define F6  1397
 #define FS6 1480
+#define GF6 1480
 #define G6  1568
 #define GS6 1661
+#define AF6 1661
 #define A6  1760
 #define AS6 1865
+#define BF6 1865
 #define B6  1976
 #define C7  2093
 #define CS7 2217
+#define DF7 2217
 #define D7  2349
 #define DS7 2489
+#define EF7 2489
 #define E7  2637
 #define F7  2794
 #define FS7 2960
+#define GF7 2960
 #define G7  3136
 #define GS7 3322
+#define AF7 3322
 #define A7  3520
 #define AS7 3729
+#define BF7 3729
 #define B7  3951
 #define C8  4186
 #define CS8 4435
+#define DF8 4435
 #define D8  4699
 #define DS8 4978
+#define EF8 4978
 
 #define speaker                11     // digital pin number for speaker/buzzer
 
 float default_tempo = float(animato); // default tempo - beats per minute
 float current_tempo = default_tempo;
-float timings[6];                     // holds timings for each defined note/rest time value
+float timings[7];                     // holds timings for each defined note/rest time value
 #define trills_per_crotchet     8     // number of note changes in a trill per crotchet
 float trill_duration;                 // set depending on the tempo selected
 
 //
 // Standard note/rest duration definitions, set in the set_tempo function
 //
-#define semib     timings[0] // 4 beats
-#define dot_minim timings[1] // 3 beats
-#define minim     timings[2] // 2 beats
-#define crot      timings[3] // 1 beat
-#define quav      timings[4] // 1/2 beat
-#define semiq     timings[5] // 1/4 beat
+#define semib       timings[0] // 4 beats
+#define dot_minim   timings[1] // 3 beats
+#define minim       timings[2] // 2 beats
+#define crot        timings[3] // 1 beat
+#define quav        timings[4] // 1/2 beat
+#define semiq       timings[5] // 1/4 beat
+#define demi_semiq  timings[6] // 1/8 beat
 
 //
 // Function waits for the given time in seconds, or part thereof.
@@ -160,14 +198,15 @@ void wait(float duration) {
 //
 void set_tempo(float new_tempo) {
   float crotchet_duration;
-  current_tempo = new_tempo;         // keep current tempo up to date in case it needs to be queried
-  crotchet_duration = 60 / new_tempo;// timing in seconds for 1 beat
-  semib     = crotchet_duration * 4; // semibrieve, 4 beats
-  dot_minim = crotchet_duration * 3; // dotted mimin, 3 beats
-  minim     = crotchet_duration * 2; // minim, 2 beats
-  crot      = crotchet_duration;     // crotchet, 1 beat
-  quav      = crotchet_duration / 2; // quaver, 1/2 beat
-  semiq     = crotchet_duration / 4; // semiquaver, 1/4 beat
+  current_tempo = new_tempo;           // keep current tempo up to date in case it needs to be queried
+  crotchet_duration = 60 / new_tempo;  // timing in seconds for 1 beat
+  semib      = crotchet_duration * 4;  // semibrieve, 4 beats
+  dot_minim  = crotchet_duration * 3;  // dotted mimin, 3 beats
+  minim      = crotchet_duration * 2;  // minim, 2 beats
+  crot       = crotchet_duration;      // crotchet, 1 beat
+  quav       = crotchet_duration / 2;  // quaver, 1/2 beat
+  semiq      = crotchet_duration / 4;  // semiquaver, 1/4 beat
+  demi_semiq = crotchet_duration / 8;  // demi-semi-quaver, 1/8 beat
 
   // Set the note duration time for one note in a trill depending on the
   // defined number of note changes in a trill per crotchet.
@@ -214,7 +253,7 @@ void setup() {
 
 void loop() {
   // some music examples...
-
+  
   middle_C();
   wait(3);
 
@@ -241,6 +280,10 @@ void loop() {
 
   canon_in_D();
   wait(3);
+
+  scarborough_fair();
+  wait(3);
+
   // and back to the beginning...
 }
 
@@ -961,4 +1004,65 @@ void canon_in_D() {
   play(CS5, quav);
   // bar 53
   play(D5, semib);
+}
+
+void scarborough_fair() {
+  // B flat / A sharp, 3/4 time
+  // bar 1
+  // run through twice
+  for (uint8_t pass = 1; pass <= 2; pass++) {
+    set_tempo(180);
+    play(D4, minim);
+    play(D4, crot);
+    // bar 2
+    play(A4, minim);
+    play(A4, crot);
+    // bar 3
+    play(E4, crot + quav);
+    play(F4, quav);
+    play(E4, crot);
+    // bar 4
+    play(D4, dot_minim);
+    // bar 5
+    rest(crot);
+    play(A4, crot);
+    play(C5, crot);
+    // bar 6
+    play(D5, minim);
+    play(C5, crot);
+    // bar 7
+    play(A4, crot);
+    play(B4, crot);
+    play(G4, crot);
+    // bar 8 & 9
+    play(A4, dot_minim + minim);
+    play(D5, crot);
+    // bar 10
+    play(D5, minim);
+    play(D5, crot);
+    // bar 11
+    play(C5, minim);
+    play(A4, crot);
+    // bar 12
+    play(A4, crot);
+    play(G4, crot);
+    play(F4, crot);
+    // bar 13
+    play(E4, minim );
+    play(A4, crot);
+    // bar 14
+    play(D4, minim);
+    play(A4, crot);
+    // bar 15
+    play(G4, minim);
+    play(F4, crot);
+    // bar 16
+    play(E4, crot);
+    play(D4, crot);
+    play(C4, crot);
+    // bar 17 & 18
+    play(D4, dot_minim + dot_minim);
+    rest(dot_minim);
+  }
+
 }
