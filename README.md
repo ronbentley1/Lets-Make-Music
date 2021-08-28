@@ -26,13 +26,13 @@ The sketch includes everything needed to put together your own musical scores an
 
 The sketch provides five functions you can use for creating and playing music. These are:
 
-- set_tempo - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
+- set_tempo - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo seconds. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
 
-- play - will play the given note for the given duration, eg play(C4, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F#2 for the duration of a crotchet + a quaver, etc.
+- play - will play the given note for the given duration, eg play(C4, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F2 sharp for the duration of a crotchet + a quaver, etc.
 
 - rest - rests for the given duration, during which time silence is maintained, eg rest(quav), rest(0.5), etc.
 
-- trill - performs a trill with the given two notes continually one after the other for the given duration, eg trill(C4, CS4, minim), trill(E3, F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
+- trill - performs a trill with the given two notes continually one after the other for the given duration, eg trill(C4, CS4, minim), trill(E3, F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof, depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
 
 - wait - waits for the given duration (seconds or part thereof) , eg wait(5.5) waits for 5.5 seconds, wait(minim) waits for the duration of a minim, etc. This function is used by the play and rest functions but it is may also for used in the end user code.
 
@@ -255,13 +255,13 @@ The same idea would apply for any division.
 
 Ties
 
-A tied note is a musical notation represented by a curved line that connects two notes of the same pitch. In a tie, the second note is not played but its duration value is added to the first note. So, for example, if a score shows two tied notes, say A3 with duration of a crotchet and the second also with duration a crotchet then we would represent this as play(A3, crot + crot), or play(A3, minim). The first representation is better as it infers we are playing a tied note.
+A tied note is a musical notation represented by a curved line that connects two notes of the same pitch. In a tie, the second note is not played but its duration value is added to the first note. So, for example, if a score shows two tied notes, say AF3 with duration of a crotchet and the second also with duration a crotchet then we would represent this as play(AF3, crot + crot), or play(AF3, minim). The first representation is better as it infers we are playing a tied note.
 
-Another example might be two notes, say FS4 the first with a duration value of a crotchet and the second with a duration value of a quaver. We would represent this as play(FS4, crot + quav). And so on.
+Another example might be two notes, say F4 the first with a duration value of a crotchet and the second with a duration value of a quaver. We would represent this as play(F4, crot + quav). And so on.
 
 Compounded Note & Rest Durations
 
-We saw in the above techniques how we were able to compound and manipulate note durations to represent the precise needs of a score to represent ties and triplets. This same technique is equally applicable to the rest and trill functions where note durations are required. In fact, any arithmetic combination is permissible so long as it makes sense, for example play(DS5, minim + crot + quav), rest(crot + quav), trill(G2, GS2, dot_minim + quav/2), etc.
+We saw in the above techniques how we were able to compound and manipulate note durations to represent the precise needs of a score to represent triplets and ties. This same technique is equally applicable to the rest and trill functions where note durations are required. In fact, any arithmetic combination is permissible so long as it makes sense, for example play(D5, minim + crot + quav), rest(crot + quav), trill(G2, GS2, dot_minim + quav/2), etc.
 
 Tempos
 
@@ -269,11 +269,11 @@ Whilst the sketch provides a list of standard tempo definitions, any value may b
 
 Repeats
 
-Often a section of a score is repeated. Rather than duplicating the same set and series of notes/rests it can be helpful to use labels and the (dreaded) goto statement. To do this it will be necessary to detect if a section of the score has been repeated or not. This can be managed using a simple variable which has one of two states - 0 if the repeat section has not yet been repeated and 1 otherwise. For example:
+Often a section of a score is repeated. Rather than duplicating the same set and series of notes/rests it can be helpful to use labels and the (dreaded) goto statement. To do this it will be necessary to detect if a section of the score has already been repeated or not. This can be managed using a simple variable which has one of two states - 'false' if the repeat section has not yet been repeated and 'true' otherwise. For example:
 
 ...
 
-uint8_t repeated = 0;
+bool repeated = false;
 
 ...
 repeat_1:
@@ -290,9 +290,9 @@ play(C4, quav);
 
 ...
 
-If (repeated == 0){
+If (repeated == false){
 
-repeated = 1; 
+repeated = true; 
 
 play(A3, crot);
 
@@ -313,7 +313,7 @@ My apologies to the purists amongst you but in this instance the use of a goto i
 
 Transcribing a Score
 
-It helps to be neat and tidy when coding a musical score into commands. Work bar by bar according to the score's time signature, commenting each bar with its bar number and adding any other comments that may be helpful. This approach assist in debugging your code as I can guarantee that you will introduce incorrect notes and/or note/rest durations. Listening to the score playing for accuracy whilst reading through the code bar by bar soon identifies where things are wrong.
+It helps to be neat and tidy when coding a musical score into commands. Work bar by bar according to the score's time signature, commenting each bar with its bar number and adding any other comments that may be helpful. This approach assists in debugging your code as I can guarantee that you will introduce incorrect notes and/or note/rest durations. Listening to the score playing for accuracy whilst reading through the code bar by bar soon identifies where things are wrong.
 
 Out of the Box
 
