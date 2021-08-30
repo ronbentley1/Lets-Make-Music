@@ -311,7 +311,7 @@ goto repeat;
 
 My apologies to the purists amongst you but in this instance the use of a goto is simple, clear and easily implemented, even with scores having multiple repeated sections.
 
-Transcribing a Score
+**_Transcribing a Score_**
 
 It helps to be neat and tidy when coding a musical score into commands. Work bar by bar according to the score's time signature, commenting each bar with its bar number and adding any other comments that may be helpful. This approach assists in debugging your code as I can guarantee that you will introduce incorrect notes and/or note/rest durations. Listening to the score playing for accuracy whilst reading through the code bar by bar soon identifies where things are wrong.
 
