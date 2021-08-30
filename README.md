@@ -18,7 +18,7 @@ The wiring diagram is as shown below at Schematics, but it is a very simple circ
 
 Capabilities
 
-To give you some idea of the 'lets make music' sketch capabilities, I crafted several quite complex scores such as Penny Lane, Yesterday, Annie's Song, The Black Velvet Band, and others, all of which played faithfully. Unfortunately, I am not able to publish these due to copyright. I have, though, included other examples out-of-the-box (OOTB) which provide helpful demonstrations of capability and guidance to get you started on your own scores.
+To give you some idea of the 'lets make music' sketch capabilities, I crafted several quite complex scores by a number of legendary popular artists all of which played faithfully.  Unfortunately, I am not able to publish these due to copyright.  I have, though, included other examples out-of-the-box (OOTB) which provide helpful demonstrations of capability and guidance to help you get started on your own scores.
 
 Let's Make Music
 
