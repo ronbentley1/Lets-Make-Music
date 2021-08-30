@@ -1,6 +1,6 @@
 # Lets-Make-Music
 
-Let's Make Music in a Nut Shell
+**Let's Make Music in a Nut Shell**
 
 If you love Arduino and have a rudimentary understanding of music then why not have some fun with Let's Make Music?
 
