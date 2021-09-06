@@ -253,11 +253,14 @@ void setup() {
 
 void loop() {
   // some music examples...
-  
+
   middle_C();
   wait(3);
 
   twinkle_twinkle();
+  wait(3);
+
+  silent_night();
   wait(3);
 
   jingle_bells();
@@ -1065,4 +1068,68 @@ void scarborough_fair() {
     rest(dot_minim);
   }
 
+}
+
+void silent_night() {
+  // 3/4 time
+  set_tempo(default_tempo);
+  // bar 1
+  play(G4, crot + quav);
+  play(A4, quav);
+  play(G4, crot);
+  // bar 2
+  play(E4, dot_minim);
+  // bar 3
+  play(G4, crot + quav);
+  play(A4, quav);
+  play(G4, crot);
+  // bar 4
+  play(E4, dot_minim);
+  // bar 5
+  play(D5, minim);
+  play(D5, crot);
+  // bar 6
+  play(B4, dot_minim);
+  // bar 7
+  play(C5, minim);
+  play(C5, crot);
+  // bar 8
+  play(G4, dot_minim);
+  // bars 9-12 and 13-16 are identical so repeat twice
+  for (uint8_t pass = 1; pass <= 2; pass++) {
+    // bar 9, bar 13
+    play(A4, minim);
+    play(A4, crot);
+    // bar 10, bar 14
+    play(C5, crot + quav);
+    play(B4, quav);
+    play(A4, crot);
+    // bar 11, bar 15
+    play(G4, crot + quav);
+    play(A4, quav);
+    play(G4, crot);
+    // bar 12, bar 16
+    play(E4, dot_minim);
+  }
+  // bar 17
+  play(D5, minim);
+  play(D5, crot);
+  // bar 18
+  play(F5, crot + quav);
+  play(D5, quav);
+  play(B4, crot);
+  // bar 19
+  play(C5, dot_minim);
+  // bar 20
+  play(E5, dot_minim);
+  // bar 21
+  play(C5, crot);
+  play(G4, crot);
+  play(E4, crot);
+  // bar 22
+  play(G4, crot + quav);
+  play(F4, quav);
+  play(D4, crot);
+  // bars 23 & 24
+  play(C4, dot_minim + dot_minim);
 }
