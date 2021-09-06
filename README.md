@@ -324,6 +324,7 @@ The music score functions provided OOTB are:
 
 - middle_C
 - twinkle_twinkle (little star)
+- silent_night
 - jingle_bells
 - happy_birthday
 - ditty_1
