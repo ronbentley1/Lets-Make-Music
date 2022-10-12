@@ -41,25 +41,15 @@ Let's look at an example of a familiar tune (Happy Birthday):
 
 
  // Happy Birthday
- 
  set_tempo(default_tempo);
- 
  // bar 1
- 
  play(note_G3, quav);
- 
  play(note_G3, quav);
- 
  play(note_A3, crot);
- 
  play(note_G3, crot);
- 
  // bar 2
- 
  play(note_C4, crot);
- 
  play(note_B3, minim);
- 
  // bar 3
  
  play(note_G3, quav);
