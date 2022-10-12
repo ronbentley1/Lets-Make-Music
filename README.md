@@ -240,7 +240,7 @@ Hopefully, by this point you understand the principles being applied?
 
 **_Triplets_**
 
-A triplet is a single beat of the score's time signature divided into three notes of equal time duration and is normally indicated by a '3' above the triplet notes. This is easily modelled, for example if we have the following three notes defined as a triplet - A3, AS3 and B3 then we would simply transcribe this as:
+A triplet is a single beat of the score's time signature divided into three notes of equal time duration and is normally indicated by a '3' above the triplet notes. This is easily modelled, for example if we have the following three notes defined as a triplet - note_A3, note_AS3 and note_B3 then we would simply transcribe this as:
 
 // crotchet triplet
 
