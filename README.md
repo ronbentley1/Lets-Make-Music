@@ -28,11 +28,11 @@ The sketch provides five functions you can use for creating and playing music. T
 
 - **set_tempo** - sets the tempo (pace) of a musical piece in beats per minute (i.e. crotchets per minute), eg set_tempo(allegro), set_tempo(144), etc. The value of a crotchet is calculated as 60/tempo seconds. All other note durations are then determined from this calculated value. At sketch start up, the tempo is set to the default_tempo (animato, or 120 beats (crotchets) per minute). The tempo will remain at this setting until changed by the user code.
 
-- **play** - will play the given note for the given duration, eg play(C4, minim) will play middle C for the duration of a minim, play(FS2, crot + quav) will play F2 sharp for the duration of a crotchet + a quaver, etc.
+- **play** - will play the given note for the given duration, eg play(note_C4, minim) will play middle C for the duration of a minim, play(note_FS2, crot + quav) will play F2 sharp for the duration of a crotchet + a quaver, etc.
 
 - **rest** - rests for the given duration, during which time silence is maintained, eg rest(quav), rest(0.5), etc.
 
-- **trill** - performs a trill with the given two notes continually one after the other for the given duration, eg trill(C4, CS4, minim), trill(E3, F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof, depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
+- **trill** - performs a trill with the given two notes continually one after the other for the given duration, eg trill(note_C4, note_CS4, minim), trill(note_E3, note_F3, quav), etc. By default and OOTB, the trill performs eight note changes per crotchet, or part thereof, depending on the trill/note duration given in its function call, irrespective of the tempo set. If fewer or more note changes per crotchet are required then reset the definition 'trills_per_crotchet'.
 
 - **wait** - waits for the given duration (seconds or part thereof) , eg wait(5.5) waits for 5.5 seconds, wait(minim) waits for the duration of a minim, etc. This function is used by the play and rest functions but it is may also for used in the end user code.
 
@@ -46,69 +46,69 @@ Let's look at an example of a familiar tune (Happy Birthday):
  
  // bar 1
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(A3, crot);
+ play(note_A3, crot);
  
- play(G3, crot);
+ play(note_G3, crot);
  
  // bar 2
  
- play(C4, crot);
+ play(note_C4, crot);
  
- play(B3, minim);
+ play(note_B3, minim);
  
  // bar 3
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(A3, crot);
+ play(note_A3, crot);
  
- play(G3, crot);
+ play(note_G3, crot);
  
  // bar 4
  
- play(D4, crot);
+ play(note_D4, crot);
  
- play(C4, minim);
+ play(note_C4, minim);
  
  // bar 5
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(G3, quav);
+ play(note_G3, quav);
  
- play(G4, crot);
+ play(note_G4, crot);
  
- play(E4, crot);
+ play(note_E4, crot);
  
  // bar 6
  
- play(C4, crot);
+ play(note_C4, crot);
  
- play(B3, crot);
+ play(note_B3, crot);
  
- play(A3, crot);
+ play(note_A3, crot);
  
  // bar 7
  
- play(F4, quav);
+ play(note_F4, quav);
  
- play(F4, quav);
+ play(note_F4, quav);
  
- play(E4, crot);
+ play(note_E4, crot);
  
- play(C4, crot);
+ play(note_C4, crot);
  
  // bar 8
  
- play(D4, crot);
+ play(note_D4, crot);
  
- play(C4, minim);
+ play(note_C4, minim);
  
  
 To notice about the above example is:
@@ -126,27 +126,27 @@ set_tempo(default_tempo * 2); // lively pace
 
 // bar 1
 
-play(C4, minim);
+play(note_C4, minim);
 
-play(G3, crot);
+play(note_G3, crot);
 
 // bar 2
 
-play(G3, crot);
+play(note_G3, crot);
 
-play(GS3, minim);
+play(note_GS3, minim);
 
 // bar 3
 
-play(G3, minim);
+play(note_G3, minim);
 
 rest(crot);
 
 // bar 4
 
-play(B3, minim);
+play(note_B3, minim);
 
-play(C4, crot);
+play(note_C4, crot);
 
 set_tempo(default_tempo); // reset tempo 
 
@@ -167,69 +167,69 @@ set_tempo(default_tempo);
 
 // bar 1
 
-trill(G3, GS3, quav);
+trill(note_G3, note_GS3, quav);
 
-play(G3, quav);
+play(note_G3, quav);
 
-play(A3, crot);
+play(note_A3, crot);
 
-play(G3, crot);
+play(note_G3, crot);
 
 // bar 2
 
-play(C4, crot);
+play(note_C4, crot);
 
-play(B3, minim);
+play(note_B3, minim);
 
 // bar 3
 
-trill(G3, GS3, quav);
+trill(note_G3, note_GS3, quav);
 
-play(G3, quav);
+play(note_G3, quav);
 
-play(A3, crot);
+play(note_A3, crot);
 
-play(G3, crot);
+play(note_G3, crot);
 
 // bar 4
 
-play(D4, crot);
+play(note_D4, crot);
 
-play(C4, minim);
+play(note_C4, minim);
 
 // bar 5
 
-trill(G3, GS3, quav);
+trill(note_G3, note_GS3, quav);
 
-play(G3, quav);
+play(note_G3, quav);
 
-play(G4, crot);
+play(note_G4, crot);
 
-play(E4, crot);
+play(note_E4, crot);
 
 // bar 6
 
-play(C4, crot);
+play(note_C4, crot);
 
-play(B3, crot);
+play(note_B3, crot);
 
-play(A3, crot);
+play(note_A3, crot);
 
 // bar 7
 
-trill(F4, FS4, quav);
+trill(note_F4, note_FS4, quav);
 
-play(F4, quav);
+play(note_F4, quav);
 
-play(E4, crot);
+play(note_E4, crot);
 
-play(C4, crot);
+play(note_C4, crot);
 
 // bar 8
 
-play(D4, crot);
+play(note_D4, crot);
 
-play(C4, minim);
+play(note_C4, minim);
 
 
 It is the same melody we are used to but with a little twist. The trill function is a simple implementation of a trill, but should provide some interest in your scores.
@@ -244,24 +244,24 @@ A triplet is a single beat of the score's time signature divided into three note
 
 // crotchet triplet
 
-play(A3, crot/3);
+play(note_A3, crot/3);
 
-play(AS3, crot/3); 
+play(note_AS3, crot/3); 
 
-play(B3, crot/3);
+play(note_B3, crot/3);
 
 
 The same idea would apply for any division.
 
 **_Ties_**
 
-A tied note is a musical notation represented by a curved line that connects two notes of the same pitch. In a tie, the second note is not played but its duration value is added to the first note. So, for example, if a score shows two tied notes, say AF3 with duration of a crotchet and the second also with duration a crotchet then we would represent this as play(AF3, crot + crot), or play(AF3, minim). The first representation is better as it infers we are playing a tied note.
+A tied note is a musical notation represented by a curved line that connects two notes of the same pitch. In a tie, the second note is not played but its duration value is added to the first note. So, for example, if a score shows two tied notes, say note_AF3 with duration of a crotchet and the second also with duration a crotchet then we would represent this as play(note_AF3, crot + crot), or play(note_AF3, minim). The first representation is better as it infers we are playing a tied note.
 
-Another example might be two notes, say F4 the first with a duration value of a crotchet and the second with a duration value of a quaver. We would represent this as play(F4, crot + quav). And so on.
+Another example might be two notes, say note_F4 the first with a duration value of a crotchet and the second with a duration value of a quaver. We would represent this as play(note_F4, crot + quav). And so on.
 
 **_Compounded Note & Rest Durations_**
 
-We saw in the above techniques how we were able to compound and manipulate note durations to represent the precise needs of a score to represent triplets and ties. This same technique is equally applicable to the rest and trill functions where note durations are required. In fact, any arithmetic combination is permissible so long as it makes sense, for example play(D5, minim + crot + quav), rest(crot + quav), trill(G2, GS2, dot_minim + quav/2), etc.
+We saw in the above techniques how we were able to compound and manipulate note durations to represent the precise needs of a score to represent triplets and ties. This same technique is equally applicable to the rest and trill functions where note durations are required. In fact, any arithmetic combination is permissible so long as it makes sense, for example play(note_D5, minim + crot + quav), rest(crot + quav), trill(note_G2, note_GS2, dot_minim + quav/2), etc.
 
 **_Tempos_**
 
@@ -278,15 +278,15 @@ bool repeated = false;
 ...
 repeat_1:
 
-play(B3, crot);
+play(note_B3, crot);
 
 rest(quav);
 
-play(C4, quav);
+play(note_C4, quav);
 
-play(D4, crot+quav);  // dotted crotchet
+play(note_D4, crot+quav);  // dotted crotchet
 
-play(C4, quav);
+play(note_C4, quav);
 
 ...
 
@@ -294,13 +294,13 @@ If (repeated == false){
 
 repeated = true; 
 
-play(A3, crot);
+play(note_A3, crot);
 
 rest(crot);
 
-play(C4, crot);
+play(note_C4, crot);
 
-play(D4, crot);
+play(note_D4, crot);
 
 goto repeat;
 
